@@ -21,9 +21,9 @@ namespace Tp_16_4_Personaje
         {
             Color = Ncolor;
         }
-        public int RecibirDaño(int DañoRecibido)
+        public int RecibirDaño(int DañoRec)
         {
-            int DañoEf = DañoRecibido - Defensa;
+            int DañoEf = DañoRec - Defensa;
             if (DañoEf  < 0)
             {
                 DañoEf = 0;
