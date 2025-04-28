@@ -12,12 +12,13 @@ namespace Tp_16_4_Personaje
         {
             Random Al = new Random();
             int NumAl = Al.Next(Minimo, Maximo);
+            int Mana = pj.Mana;
             pj.Mana = pj.Mana + NumAl;
             if (pj.Mana > pj.ManaTotal)
             {
                 pj.Mana = pj.ManaTotal;
             }
-            int ManaRest = (NumAl-pj.Mana) * -1;
+            ManaRest = pj.Mana - Mana;
             return ManaRest;
         }
     }

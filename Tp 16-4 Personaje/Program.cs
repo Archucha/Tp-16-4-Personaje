@@ -24,7 +24,7 @@ internal class Program
         Console.WriteLine("Vida: " + p.Vida);
         Console.WriteLine("Mana: " + p.Mana);        
     }
-    private static void Main(string[] args)
+    public static void Main(string[] args)
     {
         Personaje p1 = new Personaje();
         Personaje p2 = new Personaje();
@@ -41,7 +41,7 @@ internal class Program
             Console.WriteLine("1: Cambiar color");
             Console.WriteLine("2: Atacar");
             Console.WriteLine("3: Recibir daño");
-            Console.WriteLine("4:Usar pocion");
+            Console.WriteLine("4: Usar pocion");
             int sel = int.Parse(Console.ReadLine());
             switch(sel)
             {
@@ -68,8 +68,18 @@ internal class Program
                         case 1:
                             Console.WriteLine("Ingrese el minimo que puede curar");
                             pocV.Minimo = int.Parse(Console.ReadLine());
+                            Console.WriteLine("Ingrese el maximo que puede curar");
+                            pocV.Maximo = int.Parse(Console.ReadLine());
                             pocV.Usar(p1);
-                            Console.WriteLine(pocV.Cura);
+                            Console.WriteLine("Recupero "+ pocV.Cura+ " Puntos de vida");
+                            break;
+                        case 2:
+                            Console.WriteLine("Ingrese el minimo que puede curar");
+                            pocM.Minimo = int.Parse(Console.ReadLine());
+                            Console.WriteLine("Ingrese el maximo que puede curar");
+                            pocM.Maximo = int.Parse(Console.ReadLine());
+                            pocM.Usar(p1);
+                            Console.WriteLine("Restauro "+pocM.ManaRest+" Puntos de mana");
                             break;
                     }
                     break;

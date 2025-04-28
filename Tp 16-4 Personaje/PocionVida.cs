@@ -12,12 +12,13 @@ namespace Tp_16_4_Personaje
         {
             Random Al = new Random();
             int NumAl = Al.Next(Minimo, Maximo);
+            int Vida = pj.Vida;
             pj.Vida = pj.Vida + NumAl;
             if (pj.Vida > pj.VidaTotal)
             {
                 pj.Vida = pj.VidaTotal;
             }
-            Cura = (NumAl - pj.Vida) * -1;
+            Cura = pj.Vida - Vida;
             return Cura;
         }
     }
