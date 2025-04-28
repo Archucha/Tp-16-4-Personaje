@@ -11,9 +11,11 @@ namespace Tp_16_4_Personaje
     {
         public string? Color  { get; set; }
         public int Vida { get; set; }
+        public int VidaTotal { get; set; }
+        public int ManaTotal { get; set; }
+        public int Mana { get; set; }
         public int Defensa { get; set; }
         public int Fuerza { get; set; }
-        public int Mana { get; set; }    
         public int Daño { get; set; }  
         
 

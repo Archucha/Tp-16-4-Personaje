@@ -8,12 +8,14 @@ internal class Program
         p.Color = Console.ReadLine();
         Console.WriteLine("Ingrese la vida del personaje");
         p.Vida = int.Parse(Console.ReadLine());
+        p.VidaTotal = p.Vida;
         Console.WriteLine("Ingrese la defensa del personaje");
         p.Defensa = int.Parse(Console.ReadLine());
         Console.WriteLine("Ingrese la fuerza del personaje");
         p.Fuerza = int.Parse(Console.ReadLine());
         Console.WriteLine("Ingrese el mana del personaje");
         p.Mana = int.Parse(Console.ReadLine());
+        p.ManaTotal = p.Mana;
     }
     public static void Muestra(Personaje p)
     {
