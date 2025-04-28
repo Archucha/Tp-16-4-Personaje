@@ -28,6 +28,8 @@ internal class Program
     {
         Personaje p1 = new Personaje();
         Personaje p2 = new Personaje();
+        PocionVida pocV = new PocionVida();
+        PocionMana pocM = new PocionMana();
 
         Console.WriteLine("Carga personaje 1");
         Carga(p1);
@@ -39,6 +41,7 @@ internal class Program
             Console.WriteLine("1: Cambiar color");
             Console.WriteLine("2: Atacar");
             Console.WriteLine("3: Recibir daño");
+            Console.WriteLine("4:Usar pocion");
             int sel = int.Parse(Console.ReadLine());
             switch(sel)
             {
@@ -54,6 +57,21 @@ internal class Program
                     Console.WriteLine("Cuanto daño recibio?");
                     int daño = int.Parse(Console.ReadLine());
                     p1.RecibirDaño(daño);
+                    break;
+                case 4:
+                    Console.WriteLine("Ingrese que pocion desea usar");
+                    Console.WriteLine("1:Vida");
+                    Console.WriteLine("2:Mana");
+                    int selec = int.Parse(Console.ReadLine());
+                    switch(selec)
+                    {
+                        case 1:
+                            Console.WriteLine("Ingrese el minimo que puede curar");
+                            pocV.Minimo = int.Parse(Console.ReadLine());
+                            pocV.Usar(p1);
+                            Console.WriteLine(pocV.Cura);
+                            break;
+                    }
                     break;
                 default:
                     Console.WriteLine("Ingrese una opcion valida");

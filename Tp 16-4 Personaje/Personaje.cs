@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tp_16_4_Personaje
 {
-    internal class Personaje
+    public class Personaje
     {
         public string? Color  { get; set; }
         public int Vida { get; set; }

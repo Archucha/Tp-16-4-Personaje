@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace Tp_16_4_Personaje
 {
-    internal class PocionVida:Pocion
+    public class PocionVida:Pocion
     {
-        public override int Usar(Personaje personaje)
+        public override int Usar(Personaje pj)
         {
-
+            Random Al = new Random();
+            int NumAl = Al.Next(Minimo, Maximo);
+            pj.Vida = pj.Vida + NumAl;
+            if (pj.Vida > pj.VidaTotal)
+            {
+                pj.Vida = pj.VidaTotal;
+            }
+            Cura = (NumAl - pj.Vida) * -1;
+            return Cura;
         }
     }
 }
