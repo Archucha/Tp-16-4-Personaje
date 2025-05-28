@@ -17,8 +17,7 @@ namespace Tp_16_4_Personaje
         public int Defensa { get; set; }
         public int Fuerza { get; set; }
         public int Daño { get; set; }  
-        
-
+        public Inventario inventario { get; set; }
         public void CambiarColor(string? Ncolor)
         {
             Color = Ncolor;

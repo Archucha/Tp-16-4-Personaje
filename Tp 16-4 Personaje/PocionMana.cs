@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Tp_16_4_Personaje
 {
@@ -20,6 +21,10 @@ namespace Tp_16_4_Personaje
             }
             ManaRest = pj.Mana - Mana;
             return ManaRest;
+        }
+        public override string ToString()
+        {
+            return "Pocion de Mana";
         }
     }
 }

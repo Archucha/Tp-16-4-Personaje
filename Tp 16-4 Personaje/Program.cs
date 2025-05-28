@@ -2,8 +2,9 @@
 using Tp_16_4_Personaje;
 internal class Program
 {
-        public static void Carga(Personaje p)
+    public static void Carga(Personaje p)
     {
+        Inventario inv = new Inventario();
         Console.WriteLine("Ingrese el color");
         p.Color = Console.ReadLine();
         Console.WriteLine("Ingrese la vida del personaje");
@@ -15,7 +16,8 @@ internal class Program
         p.Fuerza = int.Parse(Console.ReadLine());
         Console.WriteLine("Ingrese el mana del personaje");
         p.Mana = int.Parse(Console.ReadLine());
-        p.ManaTotal = p.Mana;
+        inv.AgregarItem();
+        p.ManaTotal = p.Mana;   
     }
     public static void Muestra(Personaje p)
     {
@@ -30,6 +32,8 @@ internal class Program
         Personaje p2 = new Personaje();
         PocionVida pocV = new PocionVida();
         PocionMana pocM = new PocionMana();
+        Inventario Inv = new Inventario();
+       
 
         Console.WriteLine("Carga personaje 1");
         Carga(p1);
@@ -79,6 +83,7 @@ internal class Program
                             Console.WriteLine("Ingrese el maximo que puede curar");
                             pocM.Maximo = int.Parse(Console.ReadLine());
                             pocM.Usar(p1);
+                            Inv.QuitarItem();
                             Console.WriteLine("Restauro "+pocM.ManaRest+" Puntos de mana");
                             break;
                     }

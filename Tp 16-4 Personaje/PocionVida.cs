@@ -21,5 +21,10 @@ namespace Tp_16_4_Personaje
             Cura = pj.Vida - Vida;
             return Cura;
         }
+
+        public override string ToString()
+        {
+            return "Pocion de Vida";
+        }
     }
 }
