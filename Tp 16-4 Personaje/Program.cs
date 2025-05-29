@@ -44,7 +44,14 @@ internal class Program
         Console.WriteLine("========Datos========");           
         Console.WriteLine("Color: " + p.Color);
         Console.WriteLine("Vida: " + p.Vida);
-        Console.WriteLine("Mana: " + p.Mana);        
+        Console.WriteLine("Mana: " + p.Mana);
+        Console.WriteLine("=======Objetos=======");
+        int i = 1;
+        foreach (Item item in p.Inventario.items)
+        {
+            Console.WriteLine(i + ": " + item);
+            i++;
+        }
     }
     public static void Main(string[] args)
     {
@@ -61,6 +68,7 @@ internal class Program
         Carga(p2);
         do
         {
+            Muestra(p1);
             Console.WriteLine("Ingrese su accion");
             Console.WriteLine("1: Cambiar color");
             Console.WriteLine("2: Atacar");
