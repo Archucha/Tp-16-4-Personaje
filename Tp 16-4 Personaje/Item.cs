@@ -8,7 +8,8 @@ namespace Tp_16_4_Personaje
 {
     public abstract class Item
     {
-        public string descripcion;
+        public Inventario? inventario { get; set; }
+        public string descripcion { get; set; }
         public abstract int Usar(Personaje pj);
 
     }

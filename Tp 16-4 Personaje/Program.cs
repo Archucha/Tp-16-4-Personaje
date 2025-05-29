@@ -2,6 +2,25 @@
 using Tp_16_4_Personaje;
 internal class Program
 {
+    public static PocionVida CrearPocionVida()
+    {
+        PocionVida pocV = new();
+        Console.WriteLine("Ingrese el minimo que puede curar");
+        pocV.Minimo = int.Parse(Console.ReadLine());
+        Console.WriteLine("Ingrese el maximo que puede curar");
+        pocV.Maximo = int.Parse(Console.ReadLine());
+        return pocV;
+    }
+
+    public static PocionMana CrearPocionMana()
+    {
+        PocionMana pocM = new();
+        Console.WriteLine("Ingrese el minimo que puede curar");
+        pocM.Minimo = int.Parse(Console.ReadLine());
+        Console.WriteLine("Ingrese el maximo que puede curar");
+        pocM.Maximo = int.Parse(Console.ReadLine());
+        return pocM;
+    }
     public static void Carga(Personaje p)
     {
         Inventario inv = new Inventario();
@@ -16,7 +35,8 @@ internal class Program
         p.Fuerza = int.Parse(Console.ReadLine());
         Console.WriteLine("Ingrese el mana del personaje");
         p.Mana = int.Parse(Console.ReadLine());
-        inv.AgregarItem();
+        p.Inventario.AgregarItem(CrearPocionMana());
+        p.Inventario.AgregarItem(CrearPocionVida());
         p.ManaTotal = p.Mana;   
     }
     public static void Muestra(Personaje p)
@@ -46,6 +66,7 @@ internal class Program
             Console.WriteLine("2: Atacar");
             Console.WriteLine("3: Recibir daño");
             Console.WriteLine("4: Usar pocion");
+            Console.WriteLine("5: Te encontraste una pocion C:");
             int sel = int.Parse(Console.ReadLine());
             switch(sel)
             {
@@ -70,21 +91,27 @@ internal class Program
                     switch(selec)
                     {
                         case 1:
-                            Console.WriteLine("Ingrese el minimo que puede curar");
-                            pocV.Minimo = int.Parse(Console.ReadLine());
-                            Console.WriteLine("Ingrese el maximo que puede curar");
-                            pocV.Maximo = int.Parse(Console.ReadLine());
                             pocV.Usar(p1);
-                            Console.WriteLine("Recupero "+ pocV.Cura+ " Puntos de vida");
+                            Console.WriteLine("Recupero " + pocV.Cura + " Puntos de vida");
                             break;
                         case 2:
-                            Console.WriteLine("Ingrese el minimo que puede curar");
-                            pocM.Minimo = int.Parse(Console.ReadLine());
-                            Console.WriteLine("Ingrese el maximo que puede curar");
-                            pocM.Maximo = int.Parse(Console.ReadLine());
                             pocM.Usar(p1);
-                            Inv.QuitarItem();
                             Console.WriteLine("Restauro "+pocM.ManaRest+" Puntos de mana");
+                            break;
+                    }
+                    break;
+                case 5:
+                    Console.WriteLine("Ingrese que pocion se encontro");
+                    Console.WriteLine("1:Vida");
+                    Console.WriteLine("2:Mana"); 
+                    int selecc = int.Parse(Console.ReadLine());
+                    switch (selecc)
+                    {
+                        case 1:
+                            p1.Inventario.AgregarItem(CrearPocionVida());
+                            break;
+                        case 2:
+                            p1.Inventario.AgregarItem(CrearPocionMana());
                             break;
                     }
                     break;
@@ -95,7 +122,9 @@ internal class Program
             Muestra(p1);
             Muestra(p2);
         }
+
         while (p1.Vida > 0 && p2.Vida > 0);
+        
         Console.WriteLine("!!");
         Console.ReadKey();
     }
