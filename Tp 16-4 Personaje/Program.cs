@@ -93,20 +93,17 @@ internal class Program
                     break;
                 case 4:
                     Console.WriteLine("Ingrese que pocion desea usar");
-                    Console.WriteLine("1:Vida");
-                    Console.WriteLine("2:Mana");
-                    int selec = int.Parse(Console.ReadLine());
-                    switch(selec)
+                    int i = 1;
+                    foreach (Item item in p1.Inventario.items)
                     {
-                        case 1:
-                            pocV.Usar(p1);
-                            Console.WriteLine("Recupero " + pocV.Cura + " Puntos de vida");
-                            break;
-                        case 2:
-                            pocM.Usar(p1);
-                            Console.WriteLine("Restauro "+pocM.ManaRest+" Puntos de mana");
-                            break;
+                        Console.WriteLine(i + ": " + item);
+                        i++;
                     }
+                    int selec = int.Parse(Console.ReadLine());
+                    Item itemSeleccionado = p1.Inventario.items[selec - 1];
+                    itemSeleccionado.Usar(p1);
+                    Console.WriteLine(itemSeleccionado + " Restauro: " + itemSeleccionado.Restauro);   
+                    p1.Inventario.QuitarItem(itemSeleccionado);
                     break;
                 case 5:
                     Console.WriteLine("Ingrese que pocion se encontro");

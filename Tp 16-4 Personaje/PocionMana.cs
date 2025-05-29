@@ -19,8 +19,8 @@ namespace Tp_16_4_Personaje
             {
                 pj.Mana = pj.ManaTotal;
             }
-            ManaRest = pj.Mana - Mana;
-            return ManaRest;
+            Restauro = pj.Mana - Mana;
+            return Restauro;
         }
         public override string ToString()
         {

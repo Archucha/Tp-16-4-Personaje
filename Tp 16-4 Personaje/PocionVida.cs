@@ -18,8 +18,8 @@ namespace Tp_16_4_Personaje
             {
                 pj.Vida = pj.VidaTotal;
             }
-            Cura = pj.Vida - Vida;
-            return Cura;
+            Restauro = pj.Vida - Vida;
+            return Restauro;
         }
 
         public override string ToString()
