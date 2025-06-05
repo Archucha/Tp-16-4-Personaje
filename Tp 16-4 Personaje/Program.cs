@@ -74,8 +74,10 @@ internal class Program
             Console.WriteLine("1: Cambiar color");
             Console.WriteLine("2: Atacar");
             Console.WriteLine("3: Recibir daño");
-            Console.WriteLine("4: Usar pocion");
-            Console.WriteLine("5: Te encontraste una pocion C:");
+            Console.WriteLine("4: Usar item");
+            Console.WriteLine("5: Te encontraste una pocion");
+            Console.WriteLine("6: Equipar item");
+            Console.WriteLine("7: Desequipar item")
             int sel = int.Parse(Console.ReadLine());
             switch(sel)
             {

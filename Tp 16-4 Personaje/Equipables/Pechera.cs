@@ -8,37 +8,31 @@ namespace Tp_16_4_Personaje.Equipables
 {
     internal class Pechera:Equipo
     {
-        public bool Equipado = false;
         public int Defensa = 15;
         public int Vida = 20;
         public override void Equipar(Personaje pj)
         {
-            if (Equipado = false)
-            {
-                pj.Defensa = pj.Defensa + Defensa;
-                pj.Vida = pj.Vida + Vida;
-                pj.VidaTotal = pj.VidaTotal + Vida;
-                Console.WriteLine("El objeto fue equipado");
-                Equipado = true;
-            }
-            else
-            {
-                Console.WriteLine("El objeto ya esta equipado");
-            }
+            pj.Defensa = pj.Defensa + Defensa;
+            pj.Vida = pj.Vida + Vida;
+            pj.VidaTotal = pj.VidaTotal + Vida;
+            Equipado = true;
         }
         public override void Desequipar(Personaje pj)
         {
-            if (Equipado = false)
+            pj.Defensa = pj.Defensa - Defensa;
+            pj.Vida = pj.Vida - Vida;
+            pj.VidaTotal = pj.VidaTotal - Vida;
+            Equipado = false;
+        }
+        public override string ToString()
+        {
+            if (Equipado == true)
             {
-                pj.Defensa = pj.Defensa - Defensa;
-                pj.Vida = pj.Vida - Vida;
-                pj.VidaTotal = pj.VidaTotal - Vida;
-                Console.WriteLine("El objeto fue equipado");
-                Equipado = true;
+                return "Pechera (Equipado)";
             }
             else
             {
-                Console.WriteLine("El objeto ya esta equipado");
+                return "Pechera";
             }
         }
     }

@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Tp_16_4_Personaje.Equipables
 {
-    internal class Casco : Equipo
+    public class Casco : Equipo
     {
-        public bool Equipado = false;
         public int Defensa = 10;
         public int Mana = 5;
         public override void Equipar(Personaje pj)
         {
-            if (Equipado = false)
+            if (Equipado == false)
             {
                 pj.Defensa = pj.Defensa + Defensa;
                 pj.Mana = pj.Mana + Mana;
@@ -28,17 +27,29 @@ namespace Tp_16_4_Personaje.Equipables
         }
         public override void Desequipar(Personaje pj)
         {
-            if (Equipado = true)
+            if (Equipado == true)
             {
                 pj.Defensa = pj.Defensa - Defensa;
                 pj.Mana = pj.Mana - Mana;
                 pj.ManaTotal = pj.ManaTotal - Mana;
-                Console.WriteLine("El objeto fue equipado");
+                Console.WriteLine("El objeto fue desequipado");
                 Equipado = false;
             }
             else
             {
                 Console.WriteLine("El objeto no esta equipado");
+            }
+        }
+
+        public override string ToString()
+        {
+            if (Equipado == true)
+            {
+                return "Casco (Equipado)";
+            }
+            else
+            {
+                return "Casco";
             }
         }
     }

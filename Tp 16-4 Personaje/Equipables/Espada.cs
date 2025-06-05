@@ -35,5 +35,16 @@ namespace Tp_16_4_Personaje.Equipables
                 Console.WriteLine("El objeto no esta equipado");
             }
         }
+        public override string ToString()
+        {
+            if (Equipado == true)
+            {
+                return "Espada (Equipada)";
+            }
+            else
+            {
+                return "Espada";
+            }
+        }
     }
 }
