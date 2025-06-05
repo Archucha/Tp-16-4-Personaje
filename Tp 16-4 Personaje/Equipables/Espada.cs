@@ -14,12 +14,7 @@ namespace Tp_16_4_Personaje.Equipables
             if (Equipado == false)
             {
                 pj.Fuerza = pj.Fuerza + Fuerza;
-                Console.WriteLine("El objeto fue equipado");
                 Equipado = true;
-            }
-            else
-            {
-                Console.WriteLine("El objeto ya esta equipado");
             }
         }
         public override void Desequipar(Personaje pj)
@@ -27,12 +22,7 @@ namespace Tp_16_4_Personaje.Equipables
             if (Equipado == true)
             {
                 pj.Fuerza = pj.Fuerza - Fuerza;
-                Console.WriteLine("El objeto fue desequipado");
                 Equipado = false;
-            }
-            else
-            {
-                Console.WriteLine("El objeto no esta equipado");
             }
         }
         public override string ToString()

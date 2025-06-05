@@ -12,17 +12,23 @@ namespace Tp_16_4_Personaje.Equipables
         public int Vida = 20;
         public override void Equipar(Personaje pj)
         {
-            pj.Defensa = pj.Defensa + Defensa;
-            pj.Vida = pj.Vida + Vida;
-            pj.VidaTotal = pj.VidaTotal + Vida;
-            Equipado = true;
+            if (Equipado == false)
+            {
+                pj.Defensa = pj.Defensa + Defensa;
+                pj.Vida = pj.Vida + Vida;
+                pj.VidaTotal = pj.VidaTotal + Vida;
+                Equipado = true;
+            }
         }
         public override void Desequipar(Personaje pj)
         {
-            pj.Defensa = pj.Defensa - Defensa;
-            pj.Vida = pj.Vida - Vida;
-            pj.VidaTotal = pj.VidaTotal - Vida;
-            Equipado = false;
+            if (Equipado == true)
+            {
+                pj.Defensa = pj.Defensa - Defensa;
+                pj.Vida = pj.Vida - Vida;
+                pj.VidaTotal = pj.VidaTotal - Vida;
+                Equipado = false;
+            }
         }
         public override string ToString()
         {

@@ -17,12 +17,7 @@ namespace Tp_16_4_Personaje.Equipables
                 pj.Defensa = pj.Defensa + Defensa;
                 pj.Mana = pj.Mana + Mana;
                 pj.ManaTotal = pj.ManaTotal + Mana;
-                Console.WriteLine("El objeto fue equipado");
                 Equipado = true;
-            }
-            else
-            {
-                Console.WriteLine("El objeto ya esta equipado");
             }
         }
         public override void Desequipar(Personaje pj)
@@ -32,12 +27,7 @@ namespace Tp_16_4_Personaje.Equipables
                 pj.Defensa = pj.Defensa - Defensa;
                 pj.Mana = pj.Mana - Mana;
                 pj.ManaTotal = pj.ManaTotal - Mana;
-                Console.WriteLine("El objeto fue desequipado");
                 Equipado = false;
-            }
-            else
-            {
-                Console.WriteLine("El objeto no esta equipado");
             }
         }
 
