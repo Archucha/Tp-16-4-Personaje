@@ -19,8 +19,7 @@ namespace Tp_16_4_Personaje.Pociones
             {
                 pj.Mana = pj.ManaTotal;
             }
-            Restauro = pj.Mana - Mana;
-            return Restauro;
+            return pj.Mana - Mana;
         }
         public override string ToString()
         {

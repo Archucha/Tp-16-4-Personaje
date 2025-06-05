@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tp_16_4_Personaje
+namespace Tp_16_4_Personaje.Equipables
 {
     internal class Pechera:Equipo
     {

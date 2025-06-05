@@ -18,8 +18,7 @@ namespace Tp_16_4_Personaje.Pociones
             {
                 pj.Vida = pj.VidaTotal;
             }
-            Restauro = pj.Vida - Vida;
-            return Restauro;
+            return pj.Vida - Vida; ;
         }
 
         public override string ToString()

@@ -93,7 +93,7 @@ internal class Program
                     p1.RecibirDaño(daño);
                     break;
                 case 4:
-                    Console.WriteLine("Ingrese que pocion desea usar");
+                    Console.WriteLine("Ingrese que item desea usar");
                     int i = 1;
                     foreach (Item item in p1.Inventario.items)
                     {
@@ -102,8 +102,12 @@ internal class Program
                     }
                     int selec = int.Parse(Console.ReadLine());
                     Item itemSeleccionado = p1.Inventario.items[selec - 1];
-                   // itemSeleccionado.Usar(p1);
-                    Console.WriteLine(itemSeleccionado + " Restauro: " + itemSeleccionado.Restauro);   
+                    int restauro = 0;
+                    if (itemSeleccionado is IUsar ItemUsable)
+                    {
+                        restauro = ItemUsable.Usar(p1);
+                    }
+                    Console.WriteLine(itemSeleccionado + " Restauro: " + restauro);   
                     p1.Inventario.QuitarItem(itemSeleccionado);
                     break;
                 case 5:

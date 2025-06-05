@@ -5,9 +5,9 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tp_16_4_Personaje
+namespace Tp_16_4_Personaje.Equipables
 {
-    public class Equipo: Item, IEquipar
+    public abstract class Equipo: Item, IEquipar
     {
         public bool Equipado { get; set; }
         public abstract void Equipar(Personaje pj);

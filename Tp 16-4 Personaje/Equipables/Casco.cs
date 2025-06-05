@@ -4,17 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tp_16_4_Personaje
+namespace Tp_16_4_Personaje.Equipables
 {
-    internal class Espada:Equipo
+    internal class Casco : Equipo
     {
         public bool Equipado = false;
-        public int Fuerza = 10;
+        public int Defensa = 10;
+        public int Mana = 5;
         public override void Equipar(Personaje pj)
         {
             if (Equipado = false)
             {
-                pj.Fuerza = pj.Fuerza + Fuerza;
+                pj.Defensa = pj.Defensa + Defensa;
+                pj.Mana = pj.Mana + Mana;
+                pj.ManaTotal = pj.ManaTotal + Mana;
                 Console.WriteLine("El objeto fue equipado");
                 Equipado = true;
             }
@@ -25,15 +28,17 @@ namespace Tp_16_4_Personaje
         }
         public override void Desequipar(Personaje pj)
         {
-            if (Equipado = false)
+            if (Equipado = true)
             {
-                pj.Fuerza = pj.Fuerza - Fuerza;
+                pj.Defensa = pj.Defensa - Defensa;
+                pj.Mana = pj.Mana - Mana;
+                pj.ManaTotal = pj.ManaTotal - Mana;
                 Console.WriteLine("El objeto fue equipado");
-                Equipado = true;
+                Equipado = false;
             }
             else
             {
-                Console.WriteLine("El objeto ya esta equipado");
+                Console.WriteLine("El objeto no esta equipado");
             }
         }
     }
