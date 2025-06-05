@@ -11,7 +11,6 @@ namespace Tp_16_4_Personaje
         public Inventario? inventario { get; set; }
         public int Restauro { get; set; }
         public string descripcion { get; set; }
-        public abstract int Usar(Personaje pj);
 
     }
 }

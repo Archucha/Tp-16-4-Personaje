@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace Tp_16_4_Personaje
+namespace Tp_16_4_Personaje.Pociones
 {
     public class PocionMana:Pocion
     {

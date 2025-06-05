@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using Tp_16_4_Personaje;
+using Tp_16_4_Personaje.Pociones;
 internal class Program
 {
     public static PocionVida CrearPocionVida()
@@ -101,7 +102,7 @@ internal class Program
                     }
                     int selec = int.Parse(Console.ReadLine());
                     Item itemSeleccionado = p1.Inventario.items[selec - 1];
-                    itemSeleccionado.Usar(p1);
+                   // itemSeleccionado.Usar(p1);
                     Console.WriteLine(itemSeleccionado + " Restauro: " + itemSeleccionado.Restauro);   
                     p1.Inventario.QuitarItem(itemSeleccionado);
                     break;
